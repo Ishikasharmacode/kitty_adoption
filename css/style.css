@@ -1,0 +1,644 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  /*sets initial font-size to 10px while allowing user to increase/decrease size */
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem;
+  box-sizing: border-box;
+}
+
+
+/* header */
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom,
+    rgba(137, 48, 232, 0.7),
+    rgba(232, 104, 48, 0.7)),
+    url(../img/kitten.jpg);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%)
+}
+
+.logo-box {
+  color: white;
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+}
+
+.text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  /*to prevent shakiness when animating heading */
+  margin-bottom: 2rem;
+}
+
+.heading-primary-main {
+  display: block;
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 2.8rem;
+  animation: moveInLeft 1.5s ease-out;
+}
+
+.heading-primary-sub {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.4rem;
+  animation: moveInRight 1.5s ease-out;
+}
+
+button{
+  border: none;
+}
+button:focus{
+  outline: none;
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+  border-radius: 10rem;
+  display: inline-block;
+  padding: 1.5rem 4rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all .2s;
+}
+
+.btn:hover {
+  transform: translateY(-.3rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
+}
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn:active {
+  transform: translateY(-.1rem);
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+}
+
+.btn-gradient {
+  /* background-image: linear-gradient(to right bottom, #c69cf4, #f4b69c); */
+  background-image: linear-gradient(to right bottom, #8930e8, #e86830);
+  color: white;
+}
+
+.btn-animated {
+  animation: moveInBottom .75s ease-out 1s;
+  animation-fill-mode: backwards;
+}
+
+/* main */
+/* about section */
+h3 {
+  text-transform: uppercase;
+}
+
+.section-one {
+  background-color: #fdeee8;
+  padding: 28rem 5rem;
+  margin-top: -20vh;
+}
+
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  background-image: linear-gradient(to right bottom, #8930e8, #e86830);
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: .2rem;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.margin-bottom-bg {
+  margin-bottom: 5rem;
+}
+
+.margin-bottom-md {
+  margin-bottom: 3rem;
+}
+
+.margin-bottom-sm {
+  margin-bottom: 1.5rem;
+}
+
+.row {
+  max-width: 114rem;
+  margin: 0 auto;
+}
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.col {
+  float: left;
+}
+
+.col:not(:last-child) {
+  margin-right: 6rem;
+}
+
+.col-1-of-2 {
+  width: calc((100% - 6rem)/2);
+}
+
+.col-1-of-3 {
+  width: calc((100% - 2* 6rem)/3);
+}
+
+.collage {
+  position: relative;
+}
+
+.photo {
+  width: 55%;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+  border-radius: 2px;
+  position: absolute;
+  z-index: 10;
+  transition: all .2s;
+  outline-offset: 2rem;
+}
+
+.photo1 {
+  left: 0;
+  top: -2rem;
+}
+
+.photo2 {
+  right: 0;
+  top: 2rem;
+}
+
+.photo3 {
+  left: 20%;
+  top: 10rem;
+}
+
+.photo:hover {
+  outline: 1.5rem solid #c69cf4;
+  transform: scale(1.05) translateY(-0.5rem);
+  box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+  z-index: 20;
+}
+
+.collage:hover .photo:not(:hover) {
+  transform: scale(0.9);
+}
+
+.section-two {
+  padding: 25rem 5rem;
+  /* height: 75rem; */
+  background-image: linear-gradient(to right,
+    rgba(137, 48, 232, 0.7),
+    rgba(232, 104, 48, 0.7)),
+    url(../img/kitten4.jpg);
+  background-size: cover;
+  clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
+  margin-top: -25vh;
+}
+
+.section-two-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  transition: transform .3s;
+}
+
+.section-two-box:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: translateY(-1.5rem) scale(1.03);
+}
+
+.gradient-icon {
+  font-size: 6rem;
+  margin-bottom: 2rem;
+  display: inline-block;
+  background: linear-gradient(to right bottom, #c69cf4, #f4b69c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-three {
+  background-color: #fdeee8;
+  padding: 28rem 5rem;
+  margin-top: -25vh;
+}
+
+ .card {
+   perspective: 150rem; /*needed for the rotation animation */
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 52rem;
+}
+
+.card-side {
+  height: 52rem;
+  transition: all .8s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  backface-visibility: hidden;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+}
+
+.card-front {
+  background-color: white;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.card-back-1 {
+  background-image: linear-gradient(to right bottom, #8930e8, #e8308c);
+}
+.card-back-2 {
+  background-image: linear-gradient(to right bottom, #e8308c, #e83a30);
+}
+.card-back-3 {
+  background-image: linear-gradient(to right bottom, #e83a30, #e86830);
+}
+
+.card:hover .card-front {
+  transform: rotateY(-180deg);
+}
+
+.card:hover .card-back {
+  transform: rotateY(0);
+}
+
+.card-img {
+  background-size: cover;
+  height: 23rem;
+  background-blend-mode: screen;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.card-img-1 {
+  background-image: linear-gradient(to right bottom, #8930e8, #e8308c), url(../img/kitten1.jpg);
+}
+
+.card-img-2 {
+  background-image: linear-gradient(to right bottom, #e8308c, #e83a30), url(../img/kitten2.jpg);
+}
+
+.card-img-3 {
+  background-image: linear-gradient(to right bottom, #e83a30, #e86830), url(../img/kitten3.jpg);
+}
+
+.card h4 {
+  font-size: 2.8rem;
+  font-weight: 500;
+  text-align: right;
+  text-transform: uppercase;
+  color: white;
+  position: absolute;
+  top: 14rem;
+  right: 0;
+  width: 75%;
+  padding: .5rem 1rem;
+}
+
+.card-heading-1 {
+  background-image: linear-gradient(to right bottom, rgba(137,48,232, 0.85), rgba(232,48,140, 0.85));
+}
+
+.card-heading-2 {
+  background-image: linear-gradient(to right bottom, rgba(232,48,140, 0.85), rgba(232,58,48, 0.85));
+}
+
+.card-heading-3 {
+  background-image: linear-gradient(to right bottom, rgba(232,58,48, 0.85), rgba(232,104,48, 0.85));
+}
+
+.card-details {
+  padding: 3rem;
+}
+
+.card-details p {
+  list-style: none;
+  width: 90%;
+  margin: 0 auto;
+  text-align: justify;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.card-back-contents{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  width: 90%;
+}
+
+.card-back-contents p{
+  color: white;
+  font-size: 3rem;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 8rem;
+}
+
+.btn-light{
+  background-color: #fdeee8;
+  color: #777;
+}
+/* footer */
+footer {
+  color: white;
+  height: 85vh;
+  background-image: linear-gradient(to right top,
+    rgba(137, 48, 232, 1),
+    rgba(232, 104, 48, 1));
+  clip-path: polygon(0 25vh, 100% 10%, 100% 100%, 0% 100%);
+  margin-top: -25vh;
+  padding: 20rem 5rem;
+  position: relative;
+}
+
+footer a {
+  color: white;
+  font-weight: 600;
+}
+
+.img-attribution{
+    position: absolute;
+    bottom: 50px;
+}
+
+/* popup */
+.popup{
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .8);
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s;
+}
+
+.popup__content{
+  width: 60%;
+  background-image: linear-gradient(105deg,
+                                  rgba(255,255,255, .8) 0%,
+                                  rgba(255,255,255, .8) 60%,
+                                  transparent 60%) ,
+                          url(../img/kittens.jpg);
+  background-size: cover;
+  box-shadow: 0 2rem 4rem rgba(0,0,0, .2);
+  border-radius: 3px;
+  display: table;
+  overflow: hidden;
+  padding: 3rem 5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(.25);
+  opacity: 0;
+  transition: all .5s .2s;
+}
+
+.popup:target {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup:target .popup__content {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.popup__close:link,
+.popup__close:visited{
+  color: #777;
+  position: absolute;
+  top: 1.5rem;
+  right: 2.5rem;
+  font-size: 3rem;
+  text-decoration: none;
+  display: inline-block;
+  transition: all .2s;
+}
+
+.popup__close:hover{
+  color: #e86830;
+}
+
+.form__input {
+  font-size: 1.5rem;
+  font-family: inherit;
+  color: inherit;
+  padding: 1.5rem 2rem;
+  margin-bottom: 3rem;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, .8);
+  border: none;
+  border-bottom: 3px solid transparent;
+  width: 55%;
+  display: block;
+}
+.form__input:focus{
+  outline: none;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, .1);
+  border-bottom: 3px solid #8930e8;
+}
+.form__input:focus:invalid {
+    border-bottom: 3px solid #e86830;
+}
+
+/* animations */
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+
+  80% {
+    transform: translateX(1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+
+  80% {
+    transform: translateX(-1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@media (max-width: 900px){
+  body{
+    padding: 0;
+    background-color: #fdeee8;
+  }
+
+  .row{
+    max-width: 50rem;
+  }
+
+  .heading-secondary {
+    font-size: 3rem;
+  }
+
+  .col:not(:last-child) {
+    margin-right: 0;
+  }
+
+  .col-1-of-2 {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .col-1-of-3 {
+    width: 100%;
+    margin-bottom: 4rem;
+  }
+
+  .popup__content{
+    width: 85%;
+    padding: 2rem 3rem;
+  }
+
+  .card{
+    height:auto;
+    border-radius: 3px;
+    background-color: white;
+    box-shadow: 0 1.5rem 4rem rgba(0,0,0, .15);
+
+    }
+     .card-side{
+      height:auto;
+      position: relative;
+      box-shadow: none;
+    }
+    .card-back{
+      height:25rem;
+      transform: rotateY(0);
+      clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+    }
+    .card:hover .card-front{
+      transform: rotateY(0);
+    }
+
+    .card-details {
+      padding: 1rem 3rem;
+    }
+
+    //back side styling
+    .card-back-contents{
+      position: relative;
+      top: 0;
+      left:0;
+      transform: translate(0);
+      width: 100%;
+      padding: 7rem 4rem 4rem 4rem;
+    }
+
+    .card-back-contents p{
+      font-size: 4rem;
+      margin-bottom: 3rem;
+    }
+}
+
+@media (max-width: 600px){
+  html{
+    font-size: 50%;
+  }
+
+  .heading-primary-main {
+    font-size: 5rem;
+    letter-spacing: 1rem;
+  }
+
+  .heading-primary-sub {
+    letter-spacing: 1rem;
+  }
+
+  .heading-secondary {
+    font-size: 2.5rem;
+  }
+
+  .popup__content{
+    width: 95%;
+    padding: 1.5rem 2rem;
+  }
+
+}
